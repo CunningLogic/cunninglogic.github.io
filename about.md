@@ -14,4 +14,4 @@ Seeking contractual work breaking and/or fixing Android phones and related softw
 
 ### Contact me
 
-[jon@cunninglogic](mailto:jon@cunninglogic.com)
+[jon@cunninglogic.com](mailto:jon@cunninglogic.com)

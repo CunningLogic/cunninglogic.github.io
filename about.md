@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Jon Sawyer aka jcase aka Justin Case aka BBQ MASTER SURPEME
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Professional Security Researcher, making Android vendors cry since 2010. 
+
+Seeking contractual work breaking and/or fixing Android phones and related software. No offensive at this time (read "I'm not writing exploits for you, nor helping your write them").
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[jon@cunninglogic](mailto:jon@cunninglogic.com)

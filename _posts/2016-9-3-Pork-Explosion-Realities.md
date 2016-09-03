@@ -9,7 +9,7 @@ Pork Explosion is real, the realities are so <s>overhyped</s> scary that you won
 
 It can gain execution on a phone without installing an app, enabling usb debugging, or visiting a webpage. No faraday cage can protect you from the Pork Explosion.
 
-It can be used to root the phone, exfiltrate confidential data, bypass code-signing, bypass dm-verity, bypass lock screens, brute force encryption keys and yes even completely circumvent the ever powerful NSA <s>backdoor</s> security extension called SELinux.
+It can be used to root the phone, exfiltrate confidential data, bypass code-signing, bypass dm-verity, bypass lock screens, brute force encryption keys and yes even completely circumvent the ever powerful NSA <s>backdoor</s> Linux Kernel security extension called SELinux.
 
 Fear the Pork.
 

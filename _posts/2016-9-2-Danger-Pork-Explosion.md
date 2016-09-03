@@ -9,6 +9,6 @@ While we work <s>to find a cheap PR firm and design a crappy logo</s> with the r
 
 As soon as our <s>drunk fat guy</s> developers are done, we will release an official detection app to the Google Play Store <s>packed full of ads</s> for free. 
 
-Coming Fall 2017 Pork Explosion
+Coming Fall 2016 Pork Explosion
 
 

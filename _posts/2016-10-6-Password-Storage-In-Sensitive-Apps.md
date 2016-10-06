@@ -16,11 +16,8 @@ Stored in /data/data/com.enchantedcloud.photovault/shared_prefs/com.enchantedclo
 
 ><?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 ><map>
->...
->    <string name="pin">7110eda4d09e062aa5e4a390b0a572ac0d2c0220</string>
->…
+><string name="pin">7110eda4d09e062aa5e4a390b0a572ac0d2c0220</string>
 ><string name=“enc_keys_pin">Dar+SDapSbp1mKcztPYWi4vDcvGBNLM8B7WVy00MT1WK0gd2R4wAdg==</string>
->…
 ></map>
 
 A quick test confirms:

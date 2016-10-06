@@ -2,15 +2,15 @@
 layout: post
 title: Password Storage In Sensitive Apps
 ---
-	Well it isn’t the promised Pork Explosion disclosure, but I ensure you that is coming soon. I have word the update to mitigate it is done, and will be shipping this month. I do however have something else, an example of what Pork Explosion could be stacked with.
+Well it isn’t the promised Pork Explosion disclosure, but I ensure you that is coming soon. I have word the update to mitigate it is done, and will be shipping this month. I do however have something else, an example of what Pork Explosion could be stacked with.
 
-	Last week I was contacted by a forensic specialist for a law enforcement agency. They had a phone that could make or break a very sensitive case, and their commercial mobile forensic tools were failing to do, well anything. They could not extract any data off the device. After verifying their identity and purpose, I agreed to help. Using a backdoor, very much like Pork Explosion, and some trickery we were able to fully extract all data off the device. This had me thinking, what next? What if this criminal was using another layer of security? What if they had a "secure storage" app, what if their photos, videos and what not were encrypted in an addition layer of security?
+Last week I was contacted by a forensic specialist for a law enforcement agency. They had a phone that could make or break a very sensitive case, and their commercial mobile forensic tools were failing to do, well anything. They could not extract any data off the device. After verifying their identity and purpose, I agreed to help. Using a backdoor, very much like Pork Explosion, and some trickery we were able to fully extract all data off the device. This had me thinking, what next? What if this criminal was using another layer of security? What if they had a "secure storage" app, what if their photos, videos and what not were encrypted in an addition layer of security?
 
-	Off to the Google PlayStore, searched for "Secure Photo" and downloaded the first result, sure enough the files stored were encrypted.... but the PIN was stored in plaintext as a shared preference. Ok no fun, so I install the second result.
+Off to the Google PlayStore, searched for "Secure Photo" and downloaded the first result, sure enough the files stored were encrypted.... but the PIN was stored in plaintext as a shared preference. Ok no fun, so I install the second result.
 
 >“Have any photos or videos you don't want someone to see? Hide these private pics and vids securely with Private Photo Vault.”
 
-	The second result was [“Private Photo Vault”](https://privatephotovault.com/) by Legendary Software Labs LLC. It has a solid 4 star rating, 1,000,000 to 5,000,000 downloads, and was lasted updated just over two months ago. Using Pork Explosion, I rooted the device and extracted the data directory for Private Photo Vault. The initial results were more promising than the first app, no plaintext PIN stored in the shared preferences. The promise didn’t last long:
+The second result was [“Private Photo Vault”](https://privatephotovault.com/) by Legendary Software Labs LLC. It has a solid 4 star rating, 1,000,000 to 5,000,000 downloads, and was lasted updated just over two months ago. Using Pork Explosion, I rooted the device and extracted the data directory for Private Photo Vault. The initial results were more promising than the first app, no plaintext PIN stored in the shared preferences. The promise didn’t last long:
 
 Stored in /data/data/com.enchantedcloud.photovault/shared_prefs/com.enchantedcloud.photovault_preferences.xml was what appeared to be the sha1 hash of the PIN and some base64 encoded key.
 
@@ -38,8 +38,8 @@ So for those that want to crack the pin and key for a “Private Photo Vault” 
 >public class Main {
 >
 >    public static void main(String[] args) {
->
->        // "pin" and "enc_keys_pin" from com.enchantedcloud.photovault_preferences.xml
+>     
+>     // "pin" and "enc_keys_pin" from com.enchantedcloud.photovault_preferences.xml
 >        String hashedPIN = "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"; // 1234
 >        String encKeyPin = "Dar+SDapSbp1mKcztPYWi4vDcvGBNLM8B7WVy00MT1WK0gd2R4wAdg=="; // 1e8a99cb-ebe8-452c-b9da-6466a8a60e02
 >
@@ -51,7 +51,7 @@ So for those that want to crack the pin and key for a “Private Photo Vault” 
 >        String KEY = decryptKey(encKeyPin,PIN);
 >        System.out.println("KEY is " + KEY);
 >    }
->
+>    
 >    private static String decryptKey (String KEY, String PIN) {
 >
 >        while (PIN.length() < 8) {

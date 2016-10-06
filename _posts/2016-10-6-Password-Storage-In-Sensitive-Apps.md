@@ -19,8 +19,8 @@ Stored in /data/data/com.enchantedcloud.photovault/shared_prefs/com.enchantedclo
 
 A quick test confirms:
 
->Jons-Mac-Pro:~ jcase$ echo -ne 1224|shasum
->4fd505f8aeed956f068c4ce57bfc30a6131b7c79 
+>Jons-Mac-Pro:~ jcase$ echo -ne 1234|shasum
+>7110eda4d09e062aa5e4a390b0a572ac0d2c0220
 
 A single iteration of SHA1 is all that is protecting your PIN code (which is limited to four digits in length). Then DES is used, padding the PIN with “0” until it has a length of 8, to encrypt a key. I stopped analysis at this point, the app was already beyond broken. The app then goes on to use   Facebook’s Android encryption library [Conceal](https://github.com/facebook/conceal), but I did not go any further.
 

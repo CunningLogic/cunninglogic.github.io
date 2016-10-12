@@ -132,6 +132,7 @@ For those looking to detect vulnerable devices, you can check for the partitions
 Author: Jon "jcase" Sawyer
 
 Special thanks:
+
 - beaups
 - ben_ra
 - QPSI
@@ -140,6 +141,7 @@ Special thanks:
 - All those that know BBQ is pork, and "Texas BBQ" is fake BBQ.
 
 Timeline
+
 - 08-31-2016   Initial Discovery
 - 08-31-2016   Notified Nextbit through Mike Chan (CTO of Nextbit)
 - 08-31-2016   Attempt to notify Foxconn through Android Security Team

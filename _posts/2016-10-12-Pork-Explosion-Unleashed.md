@@ -127,7 +127,7 @@ While in factory test mode adbd is running as root, and it requires no authentic
 
 In short, this is a full compromise over usb, which requires no logon access to the device. This vulnerability completely bypasses authentication and authorization controls on the device. It is a prime target for forensic data extraction. While it is obviously a debugging feature, it is a backdoor, it isn't something we should see in modern devices, and it is a sign of great neglect on Foxconn's part.
 
-For those looking to detect vulnerable devices, you can check for the partitions "ftmboot" amd "ftmdata". The "ftmboot" partition contacts a traditional Android kernel/ramdisk image. This one has SELinux disabled, and adb running as root. The "ftmdata" partition is mounted on /data during ftm bootmode. These partitions are only a sign that the device is vulnerable. Nextbit has mitigated this vulnerability by zeroing out these two partitions.
+For those looking to detect vulnerable devices, you can check for the partitions "ftmboot" and "ftmdata". The "ftmboot" partition contacts a traditional Android kernel/ramdisk image. This one has SELinux disabled, and adb running as root. The "ftmdata" partition is mounted on /data during ftm bootmode. These partitions are only a sign that the device is vulnerable. Nextbit has mitigated this vulnerability by zeroing out these two partitions.
 
 Author: Jon "jcase" Sawyer
 

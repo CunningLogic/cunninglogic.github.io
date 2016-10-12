@@ -132,22 +132,22 @@ For those looking to detect vulnerable devices, you can check for the partitions
 Author: Jon "jcase" Sawyer
 
 Special thanks:
-beaups
-ben_ra
-QPSI
-Android Security
-Nextbit
-All those that know BBQ is pork, and "Texas BBQ" is fake BBQ.
+- beaups
+- ben_ra
+- QPSI
+- Android Security
+- Nextbit
+- All those that know BBQ is pork, and "Texas BBQ" is fake BBQ.
 
 Timeline
-08-31-2016   Initial Discovery
-08-31-2016   Notified Nextbit through Mike Chan (CTO of Nextbit)
-08-31-2016   Attempt to notify Foxconn through Android Security Team
-08-31-2016   Attempt to notify Foxconn through Qualcomm Product Security Initiative
-08-31-2016   Nextbit through Mike Chan (CTO of Nextbit)
-09-07-2016   Nextbit states they plan to zero out the partitions
-10-11-2016   Nextbit releases fix
-10-xx-2016   Disclosure 
+- 08-31-2016   Initial Discovery
+- 08-31-2016   Notified Nextbit through Mike Chan (CTO of Nextbit)
+- 08-31-2016   Attempt to notify Foxconn through Android Security Team
+- 08-31-2016   Attempt to notify Foxconn through Qualcomm Product Security Initiative
+- 08-31-2016   Nextbit through Mike Chan (CTO of Nextbit)
+- 09-07-2016   Nextbit states they plan to zero out the partitions
+- 10-11-2016   Nextbit releases fix
+- 10-12-2016   Disclosure 
 
 
 Bonus: Check out Foxconn's dump command for more fun!
